@@ -18,7 +18,7 @@ export default class MoviesController {
 	{
 		
 	    const insertData = await Database.table('movies')
-	    					.insert({title:request.title,resume:request.resume,release_date:request.release_date,genre_id:request.genre_id}])
+	    					.insert([{title:request.post().title,resume:request.post().resume,release_date:request.post().release_date,genre_id:request.post().genre_id}])
 	    return 'Movie Created'
 	}
 

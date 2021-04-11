@@ -18,7 +18,8 @@ export default class GenresController {
 	{
 		
 
-	    const insertData = await Database.table('genres').insert({name:request.name}])
+	    const insertData = await Database.table('genres').insert([{name:request.post().name}])
+	    
 	    return 'Genre Created'
 
 	
