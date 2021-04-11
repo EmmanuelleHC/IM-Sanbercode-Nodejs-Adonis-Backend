@@ -30,6 +30,9 @@ Route.get('/healthz', async ({ response }) => {
 })
 Route.resource('movies','MoviesController').only(['index', 'store', 'show', 'update'])
 Route.delete('movies/:id','MoviesController.delete')
+
+Route.resource('genres','GenresController').only(['index', 'store', 'show', 'update'])
+Route.delete('genres/:id','GenresController.delete')
 Route.get('/', async () => {
   return { hello: 'world' }
 })
