@@ -28,6 +28,8 @@ Route.get('/healthz', async ({ response }) => {
     ? response.status(200).send({})
     : response.status(400).send({})
 })
+Route.resource('movies','MoviesController').only(['index', 'store', 'show', 'update'])
+Route.delete('movies/:id','MoviesController.delete')
 Route.get('/', async () => {
   return { hello: 'world' }
 })
